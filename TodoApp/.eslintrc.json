@@ -5,6 +5,7 @@
         "no-unused-vars": "error",
         "no-use-before-define": ["off", { "classes": false } ],
         "react/jsx-filename-extension": "off",
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "react/require-default-props": "off"
     }
 }

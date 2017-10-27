@@ -7,8 +7,18 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Note from './components/Note';
 
 export default class TodoApp extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      notes: [],
+      noteText: '',
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -16,9 +26,8 @@ export default class TodoApp extends Component {
           <Text style={styles.headerText}>TodoKoon</Text>
         </View>
         <ScrollView style={styles.scrollViewContainer}>
-
+          <Note note={{ date: Date.now().toString(), text: 'hello shawnkoon' }} />
         </ScrollView>
-
         <View style={styles.footer}>
           <TouchableOpacity style={styles.addButton}>
             <Text style={styles.addButtonText}>+</Text>
@@ -28,6 +37,7 @@ export default class TodoApp extends Component {
             style={styles.textInput}
             placeholder="Type here..."
             placeholderTextColor="white"
+
           />
         </View>
       </View>
