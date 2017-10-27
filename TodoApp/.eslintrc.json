@@ -1,6 +1,9 @@
 {
     "extends": "airbnb",
     "rules": {
+        "sort-imports": "error",
+        "no-unused-vars": "error",
+        "no-use-before-define": ["off", { "classes": false } ],
         "react/jsx-filename-extension": "off",
         "react/prefer-stateless-function": "off"
     }
