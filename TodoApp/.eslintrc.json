@@ -1,11 +1,17 @@
 {
     "extends": "airbnb",
+    "plugins": [
+        "react",
+        "react-native"
+    ],
     "rules": {
+        "class-methods-use-this": "off",
         "sort-imports": "error",
         "no-unused-vars": "error",
         "no-use-before-define": ["off", { "classes": false } ],
         "react/jsx-filename-extension": "off",
         "react/prefer-stateless-function": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "react/no-array-index-key": "off"
     }
 }

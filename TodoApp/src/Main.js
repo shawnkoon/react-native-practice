@@ -19,6 +19,31 @@ export default class TodoApp extends Component {
     };
   }
 
+  addHandler() {
+    if (this.state.noteText) {
+      const d = new Date();
+      this.setState({
+        notes: [
+          ...this.state.notes,
+          {
+            date: `${d.getFullYear()}/${d.getMonth()}/${d.getDate()} - ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`,
+            text: this.state.noteText,
+          },
+        ],
+        noteText: '',
+      });
+    }
+  }
+
+  changeHandler(noteText) {
+    this.setState({ noteText });
+  }
+
+  deleteHanlder(index) {
+    this.state.notes.splice(index, 1);
+    this.setState({ notes: this.state.notes });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -26,18 +51,20 @@ export default class TodoApp extends Component {
           <Text style={styles.headerText}>TodoKoon</Text>
         </View>
         <ScrollView style={styles.scrollViewContainer}>
-          <Note note={{ date: Date.now().toString(), text: 'hello shawnkoon' }} />
+          {this.state.notes.map(({ date, text }, key) => (
+            <Note key={key} note={{ date, text }} handleDelete={() => this.deleteHanlder(key)} />
+          ))}
         </ScrollView>
         <View style={styles.footer}>
-          <TouchableOpacity style={styles.addButton}>
+          <TouchableOpacity style={styles.addButton} onPress={() => this.addHandler()}>
             <Text style={styles.addButtonText}>+</Text>
           </TouchableOpacity>
-
           <TextInput
             style={styles.textInput}
+            onChangeText={noteText => this.changeHandler(noteText)}
+            value={this.state.noteText}
             placeholder="Type here..."
             placeholderTextColor="white"
-
           />
         </View>
       </View>
@@ -50,7 +77,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    backgroundColor: '#E91E63',
+    backgroundColor: '#EA5455',
     alignItems: 'flex-end',
     justifyContent: 'center',
     borderBottomWidth: 10,
@@ -73,7 +100,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   addButton: {
-    backgroundColor: '#E91E63',
+    backgroundColor: '#F07B3F',
     width: 90,
     height: 90,
     borderRadius: 50,
@@ -91,7 +118,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     padding: 20,
     paddingTop: 45,
-    backgroundColor: '#252525',
+    backgroundColor: '#2D4059',
     borderTopWidth: 2,
     borderTopColor: '#ededed',
   },
