@@ -15,6 +15,6 @@
         "react/require-default-props": "off",
         "react/no-array-index-key": "off",
         "react/prop-types": "off",
-        "max-len":["error", 110]
+        "max-len":["error", 120]
     }
 }

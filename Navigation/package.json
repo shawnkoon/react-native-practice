@@ -6,8 +6,7 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"ios": "react-native run-ios",
 		"test": "jest",
-		"link": "react-native link react-native-vector-icons",
-		"clean": "rm -rf ios/build"
+		"fix-font-family": "rm -rf ios/build && react-native link react-native-vector-icons && npm run ios"
 	},
 	"dependencies": {
 		"react": "16.0.0-beta.5",

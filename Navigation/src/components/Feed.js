@@ -5,7 +5,7 @@ import { users } from '../config/data';
 
 export class Feed extends Component {
   onLearnMore(user) {
-    this.props.navigation.navigate('Details', { ...user });
+    this.props.navigation.navigate('UserDetail', user);
   }
 
   render() {
