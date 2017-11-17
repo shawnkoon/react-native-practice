@@ -5,11 +5,16 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"ios": "react-native run-ios",
-		"test": "jest"
+		"test": "jest",
+		"link": "react-native link react-native-vector-icons",
+		"clean": "rm -rf ios/build"
 	},
 	"dependencies": {
 		"react": "16.0.0-beta.5",
-		"react-native": "0.49.5"
+		"react-native": "0.49.5",
+		"react-native-elements": "^0.18.2",
+		"react-native-vector-icons": "^4.4.2",
+		"react-navigation": "^1.0.0-beta.19"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",

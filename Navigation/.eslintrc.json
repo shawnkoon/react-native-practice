@@ -6,12 +6,15 @@
     ],
     "rules": {
         "class-methods-use-this": "off",
-        "sort-imports": "error",
+        "import/prefer-default-export": "off",
+        "object-curly-newline": "off",
         "no-unused-vars": "error",
         "no-use-before-define": ["off", { "classes": false } ],
         "react/jsx-filename-extension": "off",
         "react/prefer-stateless-function": "off",
         "react/require-default-props": "off",
-        "react/no-array-index-key": "off"
+        "react/no-array-index-key": "off",
+        "react/prop-types": "off",
+        "max-len":["error", 110]
     }
 }
