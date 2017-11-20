@@ -20,7 +20,7 @@ export class Me extends Component {
           title={`${this.props.name.first.toUpperCase()} ${this.props.name.last.toUpperCase()}`}
           caption={this.props.email}
         />
-        <Button title="Settings" buttonStyle={{ marginTop: 20 }} onPress={this.handleSettingsPress} />
+        <Button title="Settings" buttonStyle={{ marginTop: 20 }} onPress={() => this.handleSettingsPress()} />
         <List>
           <ListItem title="Email" rightTitle={this.props.email} hideChevron />
           <ListItem title="Phone" rightTitle={this.props.phone} hideChevron />

@@ -41,6 +41,9 @@ export const Tabs = TabNavigator({
 export const SettingStack = StackNavigator({
   Settings: {
     screen: Settings,
+    navigationOptions: {
+      title: 'Settings',
+    },
   },
 });
 
