@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import { App } from './src';
+import { Target } from './src';
 
-AppRegistry.registerComponent('ReactNativeBasics', () => App);
+AppRegistry.registerComponent('ReactNativeBasics', () => Target);

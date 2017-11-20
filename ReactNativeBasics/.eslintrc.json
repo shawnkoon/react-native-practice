@@ -8,6 +8,7 @@
         "no-use-before-define": ["off", { "classes": false } ],
         "import/prefer-default-export": "off",
         "react/jsx-filename-extension": "off",
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "react/prop-types": "off"
     }
 }
