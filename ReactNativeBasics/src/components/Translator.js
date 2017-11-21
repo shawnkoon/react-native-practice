@@ -12,20 +12,34 @@ export class EmojiTranslator extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.shuffleEmojis();
+  }
+
   getEmoji(word) {
     const { emojis } = this.state;
     return `${emojis[word.length % emojis.length]} `;
+  }
+
+  shuffleEmojis() {
+    const emojis = this.state.emojis.map(emoji => emoji);
+    emojis.forEach((emoji, index) => {
+      const x = Math.floor(Math.random() * (index + 1));
+      emojis[index] = emojis[x];
+      emojis[x] = emoji;
+    });
+    this.setState({ emojis });
   }
 
   handleChange(text) {
     this.setState({ text });
   }
 
-
   render() {
     return (
       <View style={styles.main}>
         <TextInput
+          autoFocus
           value={this.state.text}
           placeholder="Type something here..."
           onChangeText={text => this.handleChange(text)}
